@@ -22,6 +22,15 @@ namespace BinTree {
 	template <typename U>
 	class Tree {
 		Node<U>* root;
+
+		void showSubTree(Node<U>* p) const
+		{
+			if (p != nullptr) {
+				showSubTree(p->left);
+				cout << p->info << " ";
+				showSubTree(p->right);
+			}
+		}
 	public:
 		Tree() {
 			root = nullptr;
@@ -29,7 +38,7 @@ namespace BinTree {
 		~Tree() {
 
 		}
-
+		
 		void insert(U value) {
 			Node<U>* el = new Node<U>(value);
 
@@ -58,7 +67,6 @@ namespace BinTree {
 					place->right = el;
 			}
 		}
-
 		Node<U>* search(U value) {
 			//Знайти адресу вузла з заданним значенням value
 			//Якщо такого вузла немає, то повернути nullptr
@@ -70,6 +78,17 @@ namespace BinTree {
 				p = (value < p->info) ? p->left : p->right;
 			}
 			return nullptr;
+		}
+
+		void showTree()const 
+		{
+			if (root == nullptr) cout << "Tree is empty\n";
+			else {
+				showSubTree(root->left);
+				cout << root->info << " ";
+				showSubTree(root->right);
+				cout << endl;
+			}
 		}
 	};
 

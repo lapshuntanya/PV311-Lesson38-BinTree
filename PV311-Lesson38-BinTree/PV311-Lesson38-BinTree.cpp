@@ -22,4 +22,9 @@ int main()
 	auto res2 = bin.search(-11);
 	if (res2 == nullptr) cout << -11 <<  " not found\n";
 	else res2->showNode();
+
+	cout << "================================\n\n";
+
+	bin.showTree();
+
 }
