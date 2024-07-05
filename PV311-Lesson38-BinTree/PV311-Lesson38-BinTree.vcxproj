@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="PV311-Lesson38-BinTree.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinTree.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
