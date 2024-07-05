@@ -31,12 +31,20 @@ namespace BinTree {
 				showSubTree(p->right);
 			}
 		}
+		void delSub(Node<U>* p) {
+			if (p != nullptr) {
+				delSub(p->left);
+				delSub(p->right);
+				delete p;
+			}
+		}
 	public:
 		Tree() {
 			root = nullptr;
 		}
 		~Tree() {
-
+			//реалізувати Деструктор
+			delSub(root);
 		}
 		
 		void insert(U value) {
