@@ -35,6 +35,7 @@ namespace BinTree {
 			if (p != nullptr) {
 				delSub(p->left);
 				delSub(p->right);
+				cout << "del: " << p->info << endl;
 				delete p;
 			}
 		}
