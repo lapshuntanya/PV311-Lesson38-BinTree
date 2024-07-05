@@ -13,5 +13,13 @@ int main()
 	bin.insert(76);
 	bin.insert(77);
 
-	cout << endl;
+	
+	auto res1 = bin.search(11);
+	if (res1 == nullptr) cout << 11 << " not found\n";
+	else res1->showNode();
+
+
+	auto res2 = bin.search(-11);
+	if (res2 == nullptr) cout << -11 <<  " not found\n";
+	else res2->showNode();
 }
